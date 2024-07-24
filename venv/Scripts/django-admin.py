@@ -1,4 +1,4 @@
-#!C:\xampp8240\htdocs\cardealer\venv\Scripts\python.exe
+#!C:\xampp\htdocs\cardealer\venv\Scripts\python.exe
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 
