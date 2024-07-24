@@ -27,7 +27,12 @@ SECRET_KEY = '934nw3r62@!m0^ksgw3#31tntglnr%td+-_b89xpu2@q2zqv=d'
 DEBUG = True
 
 # ALLOWED_HOSTS = ['floating-badlands-41165.herokuapp.com', 'cardealerapp.co', 'www.cardealerapp.co', '127.0.0.1:8000']
-ALLOWED_HOSTS = ['198.211.99.20', 'localhost', '127.0.0.1']
+
+# ALLOWED_HOSTS = ['198.211.99.20', 'localhost', '127.0.0.1']
+
+
+ALLOWED_HOSTS = ['*']
+
 
 LOGIN_REDIRECT_URL = 'dashboard'
 
@@ -92,18 +97,22 @@ WSGI_APPLICATION = 'cardealer.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'cardealer_db',
-        'USER': 'postgres', 
-        'PASSWORD': 'postgres', 
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-     }
- }
+# DATABASES = {
+#      'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'cardealer_db',
+#         'USER': 'postgres', 
+#         'PASSWORD': '0000', 
+#         'HOST': '127.0.0.1',
+# 		'PORT': '5432',
+#      }
+#  }
 
 # DATABASES = {'default': dj_database_url.config(default='postgres://postgres:######@localhost/cardealer_db')}
+
+DATABASES = {
+    "default" : dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
 
 
 # Password validation
